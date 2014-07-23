@@ -1,0 +1,20 @@
+# example configuration for nagios connection used by nagios_monitor
+#
+# save this as nagios.yaml and modify the entries for your needs.
+# environments without nsca_host or nsca_port are not available for monitoring
+
+development:
+  nsca_host: localhost
+  nsca_port: 5667
+  # password: TopSecret
+
+test:
+  nsca_host: localhost
+  nsca_port: 5667
+
+staging:
+
+
+production:
+  nsca_host: your.nagios.host
+  nsca_port: 5667

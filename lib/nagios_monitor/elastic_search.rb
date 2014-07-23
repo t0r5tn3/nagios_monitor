@@ -10,7 +10,7 @@ module NagiosMonitor
       end
     end
 
-    def self.available
+    def self.available?
     	if Gem::Specification::find_all_by_name('tire').any?
     		puts Tire::Configuration.url()
     		true

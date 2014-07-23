@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = NagiosMonitor::VERSION
   spec.authors       = ["Torsten Eberhardt"]
   spec.email         = ["torsten.eberhardt@akra.de"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{monitor with the help of nagios}
+  spec.description   = %q{nagios monitoring for applications}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -22,4 +22,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
 
   spec.add_development_dependency "rspec", "~> 2.6"
+
+  spec.add_dependency "nagios"
+  spec.add_dependency "nagios_helper"
+  spec.add_dependency "send_nsca"
 end

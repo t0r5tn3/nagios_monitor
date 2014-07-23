@@ -2,7 +2,8 @@
 
 TODO: improve this frequently!
 
-nagios_monitor should add the ability to monitor your applications health with a separated nagios server instance.
+nagios_monitor should add the ability to monitor your applications health
+and tell your nagios server about it or let nagios just ask for it (NRPE or NSCA).
 
 ## Installation
 
@@ -18,9 +19,14 @@ Or install it yourself as:
 
     $ gem install nagios_monitor
 
+Add the nagios configuration to your #{Rails.root}/config/nagios.yaml (see config/nagios.yaml.example)
+and update host and port according to your local setup.
+
 ## Usage
 
 TODO: Write usage instructions here
+
+naja, das kommt wohl später ;-)
 
 ## Contributing
 
