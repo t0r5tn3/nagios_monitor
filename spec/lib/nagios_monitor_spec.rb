@@ -2,23 +2,17 @@
 require 'spec_helper'
 
 describe NagiosMonitor::ElasticSearch do
-	it "broccoli is ugly" do
-		NagiosMonitor::ElasticSearch.portray("Broccoli").should eql("ungenießbar!")
+
+	before do
+		@es = NagiosMonitor::ElasticSearch.new
 	end
 
-	it "anything else is delicious" do
-		NagiosMonitor::ElasticSearch.portray("Not Broccoli").should eql("Delicious!")
+	it "should know its elastic search mode" do
+		@es.mode.should_not be_nil
 	end
 
-	# this will only tell if gem 'tire' ist available or not
-	# it will not tell if an index ist actually used
-	it "should know if elastic search is used" do
-		NagiosMonitor::ElasticSearch.available?.should_not be_nil
+	it "should have mode 'none' without elasticsearch detected" do
+		@es.mode.should == 'none'
 	end
-end
 
-describe NagiosMonitor::Nsca do
-	it "should have a configuration" do
-
-	end
 end

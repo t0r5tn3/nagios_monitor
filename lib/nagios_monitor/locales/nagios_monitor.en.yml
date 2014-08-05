@@ -1,0 +1,21 @@
+
+en:
+  elasticsearch:
+    health:
+      status:
+        green: 'Elasticsearch status OK'
+        yellow: 'Elasticsearch status WARNING'
+        red: 'Elasticsearch failed!'
+
+  es_index:
+    status:
+      green: 'OK'
+      yellow: 'pass op!'
+      red: 'ohh shit!'
+    documents:
+      missing: 'documents missing'
+
+  nagios:
+    configuration:
+      missing: 'no configuration nagios.yml found'
+      incomplete: 'incomplete configuration, you must provide host, port, hostname and service_name in nagios.yml'

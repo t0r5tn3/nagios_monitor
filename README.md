@@ -2,8 +2,13 @@
 
 TODO: improve this frequently!
 
-nagios_monitor should add the ability to monitor your applications health
-and tell your nagios server about it or let nagios just ask for it (NRPE or NSCA).
+The nagios_monitor should add the ability to monitor your applications health
+and tell your nagios server about it (NSCA) (TODO: or let nagios just ask for it  (NRPE)).
+
+At this point only elasticsearch observation is implemented in parts, other might be added in future.
+The elasticsearch configuration is autodetected for tire and searchkick, other gems are not yet supported.
+
+There is plenty of space for improvements ...
 
 ## Installation
 
@@ -19,14 +24,22 @@ Or install it yourself as:
 
     $ gem install nagios_monitor
 
-Add the nagios configuration to your #{Rails.root}/config/nagios.yaml (see config/nagios.yaml.example)
-and update host and port according to your local setup.
+Add the nagios configuration to your #{Rails.root}/config/nagios.yml (see config/nagios.yml.example)
+and update 'host' and 'port' according to your local nagios setup. 'hostname' and 'service_name'
+in additions have to be configured in the configuration of the nagios server (services.cfg), for
+details view the nagios/nsca documentation. 'hostname' should represent the machine your service is
+running on, and 'service_name' should identify the the observed application.
 
 ## Usage
 
-TODO: Write usage instructions here
+To check the status of the service just run the rake task from the command line
 
-naja, das kommt wohl später ;-)
+    $ rake nagios_monitor:send_health_status
+
+or as cronjob including the propper rails environment
+
+    RAILS_ENV=production bundle exec rake nagios_monitor:send_health_status
+
 
 ## Contributing
 

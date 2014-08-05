@@ -4,17 +4,19 @@
 # environments without nsca_host or nsca_port are not available for monitoring
 
 development:
-  nsca_host: localhost
-  nsca_port: 5667
+  host: localhost
+  port: 5667
   # password: TopSecret
+  hostname: app.host.name
+  service_name : my_app
 
 test:
-  nsca_host: localhost
-  nsca_port: 5667
+  host: localhost
+  port: 5667
 
 staging:
 
 
 production:
-  nsca_host: your.nagios.host
-  nsca_port: 5667
+  host: your.nagios.host
+  port: 5667
